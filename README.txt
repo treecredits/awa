@@ -1,72 +1,11 @@
-Running the Nxt software:
+Awa es un blockchain Palmera basada en NXT
 
-Dependencies: Java 8 or later needs to be installed first. Oracle JVM gives
-better performance and has been more tested, but OpenJDK is also supported.
+El objetivo de AWA es crear una plataforma abierta que pueda ser usada para 
+todo tipo de procesos colaborativos y de negocio.
 
+Esta basada en el nxt-blockchain kit y todo su codigo es abierto.
 
-Using the installer:
-
-An IzPack based installation package is provided. Click on the corresponding
-jar/exe/dmg package, or run "java -jar nxt-client.jar" to start the
-installer. See https://bitbucket.org/JeanLucPicard/nxt/issues/283 for more
-details about the IzPack installer. After installation, use the shortcuts or
-desktop icons to start the Nxt server.
-
-
-Using the nxt-client.zip package:
-
-Unpack the nxt-client.zip package and open a shell in the resulting nxt
-directory. Execute the run.sh or start.sh script if using Linux or BSD, run.bat
-if using Windows, or run.command if using Mac.
-
-On Unix, the run.sh script must be run from within the installation directory,
-and uses this directory to search for configuration files, store logs, and for
-the nxt_db blockchain database. The start.sh script can be run from any
-directory, it starts the java process in the background and uses ~/.nxt for
-configuration files, logs, and the nxt_db database. Unlike run.sh, start.sh
-uses desktop mode, creating a desktop tray icon and opening the JavaFX UI if
-supported.
-
-The initialization takes a few seconds. When it is ready, you should see the
-message "Nxt server 1.x.x started successfully" in the console log. If run in
-desktop mode, a JavaFX window will open automatically. Otherwise, open a
-browser, without stopping the java process, and go to http://localhost:7876 ,
-where the Nxt UI should now be available.
-
-To stop the application, type Ctrl-C inside the console window, or use the
-stop.sh script if started with start.sh.
-
-Warning: It is better to use only latin characters and no spaces in the path
-to the Nxt installation directory, as the use of special characters may result
-in permissions denied error in the browser, which is a known jetty issue.
-
-
-Customization:
-
-There are many configuration parameters that could be changed, but the defaults
-are set so that normally you can run the program immediately after unpacking,
-without any additional configuration. To see what options are there, open the
-conf/nxt-default.properties file. All possible settings are listed, with
-detailed explanation. If you decide to change any setting, do not edit
-nxt-default.properties directly, but create a new conf/nxt.properties file
-and only add to it the properties that need to be different from the default
-values. You do not need to delete the defaults from nxt-default.properties, the
-settings in nxt.properties override those in nxt-default.properties. This way,
-when upgrading the software, you can safely overwrite nxt-default.properties
-with the updated file from the new package, while your customizations remain
-safe in the nxt.properties file.
-
-
-How to contribute?
-
-There are many ways to contribute to Nxt. Here are some examples:
-
- * create pull requests
- * review pull requests
- * review existing code
- * create issues (aka feature ideas, bug reports, documentation etc.)
- * answer issues
-
+Se hara una distribucion inicial del AWA entre tod@s los Palmer@s que lo quieran.
 
 Technical details:
 
@@ -101,31 +40,4 @@ that anybody can get access to your account with only your password - so make
 sure it is long and random. A weak password will result in your funds being
 stolen immediately.
 
-The java process logs its activities and error messages to the standard output
-which you see in the console window, but also to a file nxt.log, which gets
-overwritten at restart. In case of an error, the nxt.log file may contain
-helpful information, so include its contents when submitting a bug report.
-
-In addition to the default user interface at http://localhost:7876 , the
-following urls are available:
-
-http://localhost:7876/test - a list of all available http API requests, very
-useful for client developers and for anyone who wants to execute commands
-directly using the http interface without going through the browser UI.
-
-http://localhost:7876/test?requestType=<specificRequestType> - same as above,
-but only shows the form for the request type specified.
-
-http://localhost:7876/doc - a javadoc documentation for client developers who
-want to use the Java API directly instead of going through the http interface.
-
-
-Compiling:
-
-The source is included in the src subdirectory. To compile it on unix, just run
-the enclosed compile.sh script. This will compile all java classes and put them
-under the classes subdirectory, which is already in the classpath used by the
-run.sh startup script. The compiled class files can optionally be packaged in a
-nxt.jar file using the enclosed jar.sh script, and then nxt.jar should be
-included in the classpath instead of the classes subdirectory.
 
