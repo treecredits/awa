@@ -41,7 +41,7 @@ var NRS = (function(NRS, $) {
 			labelI18n: "amount_nxt",
 			helpI18n: "approve_transaction_amount_help",
 			inputName: "controlQuorumNXT",
-			addonText: "NXT",
+			addonText: "ESI",
 			addonI18n: "nxt_unit"
 		}
 		var $elems = NRS.initModalUIElement($modal, '.phasing_only_amount_nxt', 'simple_input_with_addon_modal_ui_element', context);

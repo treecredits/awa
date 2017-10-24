@@ -86,11 +86,11 @@ var NRS = (function(NRS, $) {
                 return function (callback) {
                     var from, to;
                     if (op == "buy") {
-                        from = "NXT";
+                        from = "ESI";
                         to = coins[i];
                     } else {
                         from = coins[i];
-                        to = "NXT";
+                        to = "ESI";
                     }
                     async.waterfall([
                         function(callback) {
@@ -118,7 +118,7 @@ var NRS = (function(NRS, $) {
                             symbol = coins[i];
                         } else {
                             rate = response.rate;
-                            symbol = "NXT";
+                            symbol = "ESI";
                         }
                         var row = "<tr><td>" + coins[i] + "</td>";
                         row += "<td><span>" + String(response.minAmount).escapeHTML() + "</span>&nbsp<span>" + symbol + "</span></td>";
@@ -322,7 +322,7 @@ var NRS = (function(NRS, $) {
         NRS.logConsole("modal invoked from " + from + " to " + to);
         $("#changelly_buy_title").html($.t("exchange_nxt_to_coin", { coin: to }));
         $("#changelly_buy_min").val(invoker.data("min"));
-        $("#changelly_buy_min_coin").html("NXT");
+        $("#changelly_buy_min_coin").html("ESI");
         $("#changelly_buy_rate").val(invoker.data("rate"));
         $("#changelly_buy_rate_text").html("NXT/" + to);
         $('#changelly_buy_estimated_amount').val("");

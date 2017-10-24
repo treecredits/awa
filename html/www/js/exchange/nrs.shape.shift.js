@@ -279,7 +279,7 @@ var NRS = (function(NRS, $) {
             if (data) {
                 for (var i = 0; i < data.length; i++) {
                     var transaction = data[i];
-                    if (String(transaction.curIn).escapeHTML() != "NXT" && String(transaction.curOut).escapeHTML() != "NXT") {
+                    if (String(transaction.curIn).escapeHTML() != "ESI" && String(transaction.curOut).escapeHTML() != "ESI") {
                         continue;
                     }
                     rows += "<tr>";
@@ -417,9 +417,9 @@ var NRS = (function(NRS, $) {
         NRS.logConsole("modal invoked pair " + pair + " coin " + coin);
         $("#shape_shift_buy_title").html($.t("exchange_nxt_to_coin_shift", { coin: coin }));
         $("#shape_shift_buy_min").val(invoker.data("min"));
-        $("#shape_shift_buy_min_coin").html("NXT");
+        $("#shape_shift_buy_min_coin").html("ESI");
         $("#shape_shift_buy_max").val(invoker.data("max"));
-        $("#shape_shift_buy_max_coin").html("NXT");
+        $("#shape_shift_buy_max_coin").html("ESI");
         $("#shape_shift_buy_rate").val(invoker.data("rate"));
         $("#shape_shift_buy_rate_text").html("NXT/" + coin);
         $("#shape_shift_withdrawal_address_coin").html(coin);
@@ -446,7 +446,7 @@ var NRS = (function(NRS, $) {
             if (data.error) {
                 return;
             }
-            if (data.depositType != "NXT") {
+            if (data.depositType != "ESI") {
                 msg = "incorrect deposit coin " + data.depositType;
                 NRS.logConsole(msg);
                 NRS.showModalError(msg, $modal);
@@ -615,7 +615,7 @@ var NRS = (function(NRS, $) {
                 $("#shape_shift_sell_rate").val(data.rate);
                 $("#shape_shift_sell_rate_text").html(coin + "/NXT");
                 $("#shape_shift_sell_fee").val(data.fee);
-                $("#shape_shift_sell_fee_coin").html("NXT");
+                $("#shape_shift_sell_fee_coin").html("ESI");
                 $("#shape_shift_sell_pair").val(pair);
                 var publicKey = NRS.publicKey;
                 if (publicKey == "" && NRS.accountInfo) {
@@ -640,7 +640,7 @@ var NRS = (function(NRS, $) {
                         callback(null);
                         return;
                     }
-                    if (data.withdrawalType != "NXT") {
+                    if (data.withdrawalType != "ESI") {
                         msg = "incorrect withdrawal coin " + data.withdrawalType;
                         NRS.logConsole(msg);
                         NRS.showModalError(msg, modal);
@@ -702,8 +702,8 @@ var NRS = (function(NRS, $) {
         NRS.logConsole("modal invoked pair " + pair + " coin " + coin);
         $("#m_send_amount_sell_title").html($.t("exchange_coin_to_nxt_send_amount", { coin: coin }));
         $("#m_send_amount_sell_rate_text").html("NXT/" + coin);
-        $("#m_send_amount_sell_fee_coin").html("NXT");
-        $("#m_send_amount_sell_withdrawal_amount_coin").html("NXT");
+        $("#m_send_amount_sell_fee_coin").html("ESI");
+        $("#m_send_amount_sell_withdrawal_amount_coin").html("ESI");
         $("#m_send_amount_sell_deposit_amount_coin").html(coin);
         $("#m_send_amount_sell_deposit_address").html("");
         $("#m_send_amount_sell_qr_code").html("<span style='color: blue'>" + $.t("please_enter_withdrawal_amount") + "</span>");

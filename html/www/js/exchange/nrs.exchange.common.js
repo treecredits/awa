@@ -62,7 +62,7 @@ var NRS = (function(NRS, $) {
     };
 
     NRS.getExchangeAddressLink = function (address, coin) {
-        if (coin.toUpperCase() === "NXT") {
+        if (coin.toUpperCase() === "ESI") {
             return NRS.getAccountLink({ accountRS: address }, "account");
         }
         if (coin.toUpperCase() === "BTC") {
@@ -72,7 +72,7 @@ var NRS = (function(NRS, $) {
     };
 
     NRS.getExchangeTransactionLink = function (transaction, coin) {
-        if (coin.toUpperCase() === "NXT") {
+        if (coin.toUpperCase() === "ESI") {
             return "<a href='#' class='show_transaction_modal_action' data-transaction='" + transaction + "'>" + transaction + "</a>";
         }
         if (coin.toUpperCase() === "BTC") {

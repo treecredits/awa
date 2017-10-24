@@ -1680,7 +1680,7 @@ var NRS = (function (NRS, $, undefined) {
     };
 
     NRS.isRsAccount = function(account) {
-        return NRS.isRsAccountImpl(account, NRS.constants.ACCOUNT_RS_MATCH ? NRS.constants.ACCOUNT_RS_MATCH : NRS.getRsAccountRegex("NXT"));
+        return NRS.isRsAccountImpl(account, NRS.constants.ACCOUNT_RS_MATCH ? NRS.constants.ACCOUNT_RS_MATCH : NRS.getRsAccountRegex("ESI"));
     };
 
     NRS.isRsAccountImpl = function(account, regex) {

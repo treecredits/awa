@@ -279,7 +279,7 @@ var NRS = (function(NRS, $) {
 		$form.find(":input").each(function() {
 			if ($(this).is(":invalid")) {
 				var error = "";
-				var name = String($(this).attr("name")).replace("NXT", "").replace("NQT", "").capitalize();
+				var name = String($(this).attr("name")).replace("ESI", "").replace("NQT", "").capitalize();
 				var value = $(this).val();
 
 				if ($(this).hasAttr("max")) {

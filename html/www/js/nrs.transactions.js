@@ -602,8 +602,8 @@ var NRS = (function(NRS, $, undefined) {
         }
         var change = entry.change;
         var balance = entry.balance;
-        var balanceType = "nxt";
-        var balanceEntity = "NXT";
+        var balanceType = "esi";
+        var balanceEntity = "ESI";
         var holdingIcon = "";
         if (change < 0) {
             change = String(change).substring(1);
@@ -653,7 +653,7 @@ var NRS = (function(NRS, $, undefined) {
         html += "<a class='" + linkClass + "' href='#' data-timestamp='" + NRS.escapeRespStr(entry.timestamp) + "' " + dataToken + ">";
         html += " <i class='fa fa-info'></i></a>";
 		html += '</td>';
-		if (balanceType == "nxt") {
+		if (balanceType == "esi") {
             html += "<td style='vertical-align:middle;" + color + "' class='numeric'>" + sign + change + "</td>";
             html += "<td style='vertical-align:middle;' class='numeric'>" + balance + "</td>";
             html += "<td></td>";

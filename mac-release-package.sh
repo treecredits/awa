@@ -5,7 +5,7 @@ then
 	echo VERSION not defined
 	exit 1
 fi
-APPLICATION="awa"
+APPLICATION="esi"
 PACKAGE=${APPLICATION}-client-${VERSION}
 echo PACKAGE="${PACKAGE}"
 CHANGELOG=awa-client-${VERSION}.changelog.txt
